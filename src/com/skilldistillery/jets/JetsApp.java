@@ -3,8 +3,9 @@ package com.skilldistillery.jets;
 import java.util.Scanner;
 
 public class JetsApp {
-	private Scanner input = new Scanner(System.in);
-	private Airfield airField;
+	Scanner input = new Scanner(System.in);
+	Airfield airField = new Airfield();
+	airField = new Airfield();
 	public static void main(String[] args) {
 		
 		JetsApp aj = new JetsApp();
@@ -15,7 +16,6 @@ public class JetsApp {
 		
 	}
 	public JetsApp() {
-		airField = new Airfield();
 		
 	}
 		
@@ -54,7 +54,7 @@ public class JetsApp {
 			break;
 			//sysout all cargo planes
 		case 5:
-			//airfield.listAllCargo();
+			airfield.listAllCargo();
 			break;
 			
 		case 6:

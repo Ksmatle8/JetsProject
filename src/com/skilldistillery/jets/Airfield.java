@@ -6,17 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Airfield {
-	private List<Jet> jets;
+	List<Jet> jets;
+	String fileName = "jets.txt";
 
 	public Airfield() {
-
 		// Read in the file fill array like planets list of jets
-
-		String fileName = "jets.txt";
 		readJets(fileName);
+		jets = new ArrayList<Jet>();
 	}
 
-	private void readJets(String fileName) {
+	private List<Jet> readJets(String fileName) {
 		BufferedReader br = null;
 		// add code to open file
 		jets = new ArrayList<>();
@@ -37,8 +36,19 @@ public class Airfield {
 		} catch (Exception e) {
 			System.err.println(e);
 		}
+		return jets;
 	}
-	//List all cargo jets
+	//case1 all jets
+	public void printJets() {
+		for (Jet jet : jets) {
+			System.out.println(jet);
+		}
+	}
+	//case4 fastest jet
+	public void fastest() {
+		
+	}
+	//case 5 List all cargo jets
 	public void listAllCargo() {
 		for (Jet jet : jets) {
 			if (jet instanceof CargoCarrier) {
@@ -47,12 +57,6 @@ public class Airfield {
 		}
 	}
 	
-
-	public void printJets() {
-		for (Jet jet : jets) {
-			System.out.println(jet);
-		}
-	}
 
 	@Override
 	public String toString() {
