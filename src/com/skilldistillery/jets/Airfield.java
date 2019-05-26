@@ -53,6 +53,7 @@ public class Airfield {
 		for (Jet jet : jets) {
 			if (jet instanceof CargoCarrier) {
 				((CargoCarrier) jet).loadCargo();
+				System.out.println(jets);
 			}
 		}
 	}
