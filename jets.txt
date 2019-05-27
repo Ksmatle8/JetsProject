@@ -1,5 +1,5 @@
 Cargo, KC390, 541, 1749, 55
 Cargo, C130J, 417, 2071, 67
 Fighter, F22 Raptor, 1500, 1841, 150
-Fighter, F16 Fighting Falcon, 915, 2620, 15
+Fighter, F16 Fighting Falcon, 941, 2620, 15
 Fighter, F14 Tomcat, 1544, 1840, 38

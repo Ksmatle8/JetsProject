@@ -16,6 +16,12 @@ public Jet(String type, String model, double speed, int range, long price) {
 	
 }
 
+public void getMach() {
+	double machSpeed = this.speed / 767.269;
+	System.out.print("Mach Speed: ");
+	System.out.printf("%.2f %n%n", machSpeed);
+}
+
 public String getType() {
 	return type;
 }

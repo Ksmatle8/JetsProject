@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class JetsApp {
 	Scanner input = new Scanner(System.in);
-	Airfield airField = new Airfield();
+	Airfield airField;
 	
 	public static void main(String[] args) {
 		
@@ -16,6 +16,7 @@ public class JetsApp {
 		
 	}
 	public JetsApp() {
+		airField = new Airfield();
 		
 	}
 	
@@ -36,33 +37,38 @@ public class JetsApp {
 		
 		switch (num) {
 			//print off all jets
-		case 1:
+		case 1://Done
 			airField.printJets();
 			break;
 			//calls fly() entire fleet of jets prints out jet details
 			//and amount of time the jets can fly till fuel runs out (speed range)
-		case 2:
+		case 2://Done
+			airField.printJets();
+			airField.flightTime();
 			break;
-			//sysout fastestjet with all there info
+			//fastest jet with all there info
+		case 3://Done
+			airField.fastest();
+			break;
+			//longest range jet with all there info
 			//has to search all jets to find right one
-		case 3:
+		case 4://Done
+			airField.longFlight();
 			break;
-			//sysout longest range jet with all there info
-			//has to search all jets to find right one
-		case 4:
-			break;
-			//sysout all cargo planes
-		case 5:
+			//all cargo planes
+		case 5://Done
 			airField.listAllCargo();
 			break;
-			
+			//dog fight
 		case 6:
 			break;
 			//add a jet JetImpl
-		case 7:
+		case 7://Not SYSOUT'IN
+			airField.addJet(input);
 			break;
 			//delete a jet shows a sub menu to select a jet to delete by number
 		case 8:
+			airField.removeJet(input);
 			break;
 		case 9://Done 
 			System.out.println("Exiting Program");
