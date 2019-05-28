@@ -104,24 +104,35 @@ public class Airfield {
 		}
 	}
 	// case6
-	
+	public void dogfight() {
+		for(Jet jet : jets) {
+			String type = jet.getType();
+			if (type.equals("Fighter")) {
+				System.out.println(jet.getModel() + ": ");
+			}
+			if (jet instanceof FighterJet) {
+				((FighterJet) jet).fight();
+				((FighterJet) jet).flight();
+			}
+		}
+	}
 	//case7 add a Jet
 	public void addJet(Scanner input) {
 		Jet newJet = null;
-		Long price = input.nextLong();
 		System.out.print("Cargo or fighter Type: ");
-		System.out.println("Enter a Jet Name: ");
+		String type = input.next();
+		System.out.print("Enter a Jet Model: ");
 		String model = input.next();
 		System.out.print("Speed: ");
 		Double speed = input.nextDouble();
 		System.out.print("Range: ");
 		int range = input.nextInt();
 		System.out.print("Price: $");
-		String type = input.next();
+		Long price = input.nextLong();
 		newJet = new JetImpl(type, model, speed, range, price);
 		jets.add(newJet);
 		System.out.println();
-		System.out.println("New inventory: ");
+		System.out.println("Airfield: ");
 		printJets();
 		System.out.println();
 		
@@ -129,23 +140,15 @@ public class Airfield {
 	
 	//case8 remove jet
 	public void removeJet (Scanner input) {
-		Jet newJet = null;
-		System.out.print("Cargo or fighter Type: ");
-		String type = input.next();
-		System.out.println("Enter a Jets Name: ");
-		String model = input.next();
-		System.out.print("Speed: ");
-		Double speed = input.nextDouble();
-		System.out.print("Range: ");
-		int range = input.nextInt();
-		System.out.print("Price: $");
-		Long price = input.nextLong();
-		newJet = new JetImpl(type, model, speed, range, price);
-		jets.add(newJet);
-		System.out.println();
-		System.out.println("New inventory: ");
+		System.out.println("Select a number below:");
+		for (int index = 0; index < jets.size(); index++) {
+			System.out.println((index + 1) + " " + jets.get(index).getModel());
+		}
+		int choice = input.nextInt();
+		jets.remove(choice - 1);
+		System.out.println("Airfield: ");
 		printJets();
-		System.out.println();
+		System.out.println();	
 	}
 
 	@Override

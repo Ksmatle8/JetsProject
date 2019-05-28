@@ -7,21 +7,23 @@ public class JetsApp {
 	Airfield airField;
 	
 	public static void main(String[] args) {
-		
 		JetsApp ja = new JetsApp();
 		ja.run();
 	}
 	public void run() {
 		displayUserMenu();
-		
 	}
 	public JetsApp() {
 		airField = new Airfield();
-		
 	}
 	
 	public void displayUserMenu() {
+		boolean displayMenu = true;
+		int num = 0;
 		
+		while (displayMenu = true) {
+			System.out.println();
+			System.out.println();
 		System.out.println("Choose an operation: ");
 		
 		System.out.println("1. List fleet");
@@ -33,7 +35,7 @@ public class JetsApp {
 		System.out.println("7. Add a jet to Fleet");
 		System.out.println("8. Remove a jet from Fleet");
 		System.out.println("9. Quit");
-		int num = input.nextInt();
+		num = input.nextInt();
 		
 		switch (num) {
 			//print off all jets
@@ -60,14 +62,15 @@ public class JetsApp {
 			airField.listAllCargo();
 			break;
 			//dog fight
-		case 6:
+		case 6://Done
+			airField.dogfight();
 			break;
 			//add a jet JetImpl
-		case 7://Not SYSOUT'IN
+		case 7://Done
 			airField.addJet(input);
 			break;
 			//delete a jet shows a sub menu to select a jet to delete by number
-		case 8:
+		case 8://Done
 			airField.removeJet(input);
 			break;
 		case 9://Done 
@@ -77,8 +80,7 @@ public class JetsApp {
 			default:
 			System.out.println("Pick a correct number");
 		}
-		//Switch statement for user input
-		
 	}
+}
 }
 
